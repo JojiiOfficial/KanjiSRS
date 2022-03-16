@@ -7,8 +7,8 @@ use crate::{
 };
 use clap::ArgMatches;
 
-const DEFAULT_NEW: usize = 8;
-const MAX_REVIEWS: usize = 20;
+pub(crate) const DEFAULT_NEW: usize = 8;
+pub(crate) const MAX_REVIEWS: usize = 20;
 
 pub struct RunConfigs {
     new_count: usize,

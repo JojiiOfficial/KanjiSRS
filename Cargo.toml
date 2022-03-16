@@ -11,3 +11,4 @@ serde = { version = "1.0.135", features = ["derive"]}
 open = "*"
 clap = "3.0.12"
 chrono = "0.4.19"
+term-table = "1.3.2"

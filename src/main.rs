@@ -45,6 +45,7 @@ fn main() {
         Some(("info", sub_matches)) => cli::info::run(storage, sub_matches),
         Some(("review", sub_matches)) => cli::review::run(storage, sub_matches),
         Some(("fix-db", sub_matches)) => cli::fix_db::run(storage, sub_matches),
+        Some(("stats", sub_matches)) => cli::stats::run(storage, sub_matches),
         _ => cli::run(storage, app),
     }
 }

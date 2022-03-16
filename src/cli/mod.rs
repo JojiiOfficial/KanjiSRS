@@ -5,6 +5,7 @@ pub mod remove;
 pub mod reset;
 pub mod review;
 pub mod run;
+pub mod stats;
 
 pub use run::run;
 
@@ -52,7 +53,8 @@ pub fn build() -> App<'static> {
                 .about("Manually tag kanji as reviewed")
                 .arg(Arg::new("kanji")),
         )
-        .subcommand(App::new("fix-db").about("Fix database"));
+        .subcommand(App::new("fix-db").about("Fix database"))
+        .subcommand(App::new("stats").about("Show stats"));
 
     app
 }
