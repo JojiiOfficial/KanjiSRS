@@ -1,4 +1,5 @@
 pub mod add;
+pub mod fix_db;
 pub mod info;
 pub mod remove;
 pub mod reset;
@@ -50,7 +51,8 @@ pub fn build() -> App<'static> {
             App::new("review")
                 .about("Manually tag kanji as reviewed")
                 .arg(Arg::new("kanji")),
-        );
+        )
+        .subcommand(App::new("fix-db").about("Fix database"));
 
     app
 }
