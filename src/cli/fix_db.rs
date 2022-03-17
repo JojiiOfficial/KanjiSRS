@@ -9,6 +9,9 @@ pub fn run(mut storage: Storage, _app: &ArgMatches) {
         if !confirmation {
             return;
         }
+    } else {
+        println!("Database is not broken");
+        return;
     }
 
     println!("Trying to repair database");

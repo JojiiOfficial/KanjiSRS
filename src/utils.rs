@@ -40,7 +40,7 @@ pub(crate) fn read_std_line() -> String {
 
 /// Does a user confirmation with `text` and returns `true` if user agreed
 pub fn confirmation(text: &str) -> bool {
-    print_stdout(text);
+    print_stdout(&format!("{text} (yes/no)> "));
     let inp = read_std_line().to_lowercase().trim().replace("\n", "");
     ["yes", "y", "ja", "はい", ""].contains(&inp.as_str())
 }

@@ -30,6 +30,16 @@ fn main() {
     let item_storage = item_storage.join().unwrap();
     let storage = Storage::new(item_storage, srs_storage);
 
+    let sub_command = app.subcommand();
+
+    if !storage.check() {
+        if let Some(("fix-db", _)) = sub_command.as_ref() {
+        } else {
+            println!("Database broken. Run with --fix-db to fix it");
+                return;
+        }
+    }
+
     // println!("{:#?}", storage);
 
     /*
@@ -38,7 +48,7 @@ fn main() {
     }
     */
 
-    match app.subcommand() {
+    match sub_command {
         Some(("add", sub_matches)) => cli::add::run(storage, sub_matches),
         Some(("remove", sub_matches)) => cli::remove::run(storage, sub_matches),
         Some(("reset", sub_matches)) => cli::reset::run(storage, sub_matches),

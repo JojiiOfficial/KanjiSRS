@@ -1,6 +1,6 @@
 # KanjiSRS
-SRS tool to learn kanji
-
+SRS tool to learn kanji. It uses [jotoba.de](https://jotoba.de) to display kanji/stroke information.
+You can use it to review kanji you want to learn by drawing them.
 
 # Usage
 ```
@@ -25,4 +25,45 @@ SUBCOMMANDS:
 ```
 ```
 Note: To start a review run it without any arguments
+```
+
+# Adding new Kanji
+
+- `kanji_srs add <TEXT>`
+- `echo <TEXT> | kanji_srs add -`
+
+`<TEXT>` can contain kanji and non-kanji. Non Kanji and already added Kanji are skipped
+
+# Stats
+
+You can view your kanji statistics with the `stats` subcommand:<br>
+```
+╭──────────────────────╮
+│      Kanji stats     │
+├──────────────┬───────┤
+│ Total Kanji  │ 108字 │
+├──────────────┼───────┤
+│ In learning  │ 16字  │
+├──────────────┼───────┤
+│ Percentage   │ 14.8% │
+├──────────────┼───────┤
+│ Days left    │ 12日  │
+╰──────────────┴───────╯
+```
+
+# Examples
+```shell
+kanji_srs add 今日は天気が悪い # Adds 今日天気悪 unless they're already existing
+```
+
+```shell
+kanji_srs # Starts a new review + learning session.
+```
+
+```shell
+kanji_srs --no-new # Starts a review session without learning new kanji
+```
+
+```shell
+kanji_srs fix-db # Tries to repair a broken database
 ```
