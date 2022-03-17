@@ -2,6 +2,12 @@
 SRS tool to learn kanji. It uses [jotoba](https://jotoba.de) to display kanji/stroke information.
 You can use it to review kanji you want to learn by drawing them.
 
+# Purpose
+Learning kanji is hard, especially recalling stroke order and remembering them. The most effective way for me was to write kanji 
+again and again by hand. Not one by one, 100 times each, but rather shuffling a few ones around. This way you don't write the kanji you want to learn barely thinking about it several times but 
+have to actually recall the stroke order again and again each time since you just wrote another kanji. This is pretty hard to do with Anki since it sequentially shows you your kanji
+and puts them away after you recall them. With this tool you can see all the kanji you're learning at once, and thus you're able to pick a few of them and shuffle them around.
+
 # Usage
 ```
 USAGE:
