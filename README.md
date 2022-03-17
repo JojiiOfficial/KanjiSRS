@@ -1,5 +1,5 @@
 # KanjiSRS
-SRS tool to learn kanji. It uses [jotoba.de](https://jotoba.de) to display kanji/stroke information.
+SRS tool to learn kanji. It uses [jotoba](https://jotoba.de) to display kanji/stroke information.
 You can use it to review kanji you want to learn by drawing them.
 
 # Usage
