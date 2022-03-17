@@ -36,7 +36,7 @@ fn main() {
         if let Some(("fix-db", _)) = sub_command.as_ref() {
         } else {
             println!("Database broken. Run with --fix-db to fix it");
-                return;
+            return;
         }
     }
 
@@ -56,6 +56,7 @@ fn main() {
         Some(("review", sub_matches)) => cli::review::run(storage, sub_matches),
         Some(("fix-db", sub_matches)) => cli::fix_db::run(storage, sub_matches),
         Some(("stats", sub_matches)) => cli::stats::run(storage, sub_matches),
+        Some(("all", sub_matches)) => cli::all::run(storage, sub_matches),
         _ => cli::run(storage, app),
     }
 }

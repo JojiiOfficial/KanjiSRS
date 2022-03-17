@@ -1,4 +1,5 @@
 pub mod add;
+pub mod all;
 pub mod fix_db;
 pub mod info;
 pub mod remove;
@@ -54,6 +55,13 @@ pub fn build() -> App<'static> {
                 .arg(Arg::new("kanji")),
         )
         .subcommand(App::new("fix-db").about("Fix database"))
+        .subcommand(
+            App::new("all").about("Show all kanji").arg(
+                Arg::new("raw")
+                    .help("Don't show kanji separated")
+                    .long("raw"),
+            ),
+        )
         .subcommand(App::new("stats").about("Show stats"));
 
     app
