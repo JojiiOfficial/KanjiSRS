@@ -3,7 +3,7 @@ SRS tool to learn kanji
 
 
 # Usage
-```shell
+```
 USAGE:
     kanji_srs [OPTIONS] [SUBCOMMAND]
 
