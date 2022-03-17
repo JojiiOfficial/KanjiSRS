@@ -24,12 +24,12 @@ pub fn run(mut storage: Storage, app: ArgMatches) {
         return;
     }
 
-    if !utils::confirmation("Do you want to start a review? > ") {
+    if !utils::confirmation("Do you want to start a review?") {
         return;
     }
 
     let has_reviews = to_learn.iter().any(|i| i.is_learning());
-    if !has_reviews && !utils::confirmation("No reviews available. Learn more? > ") {
+    if !has_reviews && !utils::confirmation("No reviews available. Learn more?") {
         return;
     }
 

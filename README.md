@@ -8,6 +8,9 @@ again and again by hand. Not one by one, 100 times each, but rather shuffling a 
 have to actually recall the stroke order again and again each time since you just wrote another kanji. This is pretty hard to do with Anki since it sequentially shows you your kanji
 and puts them away after you recall them. With this tool you can see all the kanji you're learning at once, and thus you're able to pick a few of them and shuffle them around.
 
+# Bugs
+- Adding/removing/reviewing while another instance is running (eg. waiting for review to be done) gets overwritten when that other instance exits
+
 # Usage
 ```
 USAGE:
