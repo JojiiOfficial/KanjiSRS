@@ -7,6 +7,8 @@ pub mod utils;
 
 use std::{path::PathBuf, str::FromStr};
 
+use proc_lock::{lock, LockPath};
+
 use crate::storage::Storage;
 
 fn get_storage_path() -> PathBuf {
@@ -20,8 +22,8 @@ fn get_storage_path() -> PathBuf {
 
 fn main() {
     let app = cli::build().get_matches();
-
     let path = get_storage_path();
+    let guard = lock(&LockPath::Tmp("kanji_srs.lock")).unwrap();
     let item_storage = path.join("item_storage").to_str().unwrap().to_string();
     let srs_storage = path.join("srs_storage").to_str().unwrap().to_string();
     let item_storage = std::thread::spawn(move || storage::ItemStorage::new(item_storage));
@@ -59,4 +61,5 @@ fn main() {
         Some(("all", sub_matches)) => cli::all::run(storage, sub_matches),
         _ => cli::run(storage, app),
     }
+    drop(guard);
 }
